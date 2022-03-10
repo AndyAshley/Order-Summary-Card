@@ -1,0 +1,257 @@
+:root {
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --shadow: 0px 15px 20px hsla(223, 47%, 23%, 0.25);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: var(--pale-blue);
+}
+
+.content-wrapper {
+  padding-inline: 25px;
+}
+
+.card {
+  position: relative;
+  background: white;
+  max-width: 450px;
+  height: fit-content;
+  border-radius: 25px;
+  box-shadow: 0px 10px 30px hsla(223, 47%, 23%, 0.2);
+  padding-bottom: 3rem;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.card::after {
+  position: absolute;
+  display: inline;
+  top: -100px;
+  left: -350px;
+  content: "";
+  height: 300px;
+  width: 300px;
+  transform: rotate(45deg);
+  background: var(--very-pale-blue);
+  opacity: 0.3;
+  transition: all 0.3s ease-in-out;
+  clip-path: ellipse(25% 50% at 50% 50%);
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card:hover::after {
+  left: -100px;
+}
+
+.image-wrapper img {
+  border-radius: 25px 25px 0px 0px;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-body {
+  text-align: center;
+  padding-inline: 20px;
+}
+
+.text-wrapper {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.text-wrapper h1 {
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--dark-blue);
+  margin-bottom: 15px;
+}
+
+.text-wrapper p {
+  font-size: 17px;
+
+  line-height: 1.8rem;
+  color: var(--desaturated-blue);
+  margin: 0 auto;
+  width: 80%;
+}
+
+.plan-wrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  margin-inline: 15px;
+  padding: 25px;
+  background: var(--very-pale-blue);
+}
+
+.icon {
+  align-self: flex-end;
+}
+.plan {
+  text-align: center;
+  margin-left: 1.5rem;
+  line-height: 1.7rem;
+}
+.plan span:first-of-type {
+  color: var(--dark-blue);
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.plan span:last-child {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--desaturated-blue);
+}
+
+.change-plan {
+  margin-left: auto;
+  font-weight: 900;
+}
+
+.change-plan a,
+.change-plan a:visited {
+  color: var(--bright-blue);
+  transition: all 0.2s ease-in-out;
+}
+
+.change-plan a:hover {
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.footer-button {
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--bright-blue);
+  box-shadow: var(--shadow);
+  margin-top: 35px;
+  margin-bottom: 25px;
+  margin-inline: 15px;
+  padding: 15px;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.footer-button:hover {
+  transform: scale(1.02);
+}
+
+.footer-button::after {
+  position: absolute;
+  display: inline;
+  top: -5px;
+  left: -415px;
+  content: "";
+  height: 60px;
+  width: 400px;
+  transform: skew(-15deg);
+  background: var(--very-pale-blue);
+  opacity: 0.3;
+  transition: all 0.5s ease-in-out;
+}
+
+.footer-button:hover::after {
+  left: -5px;
+}
+
+.footer-button a,
+.footer-button a:visited {
+  color: var(--very-pale-blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card-footer span {
+  font-weight: 900;
+  color: var(--desaturated-blue);
+  cursor: pointer;
+}
+
+.card-footer span:hover {
+  color: var(--dark-blue);
+  transition: all 0.2s ease-in-out;
+}
+
+.attribution {
+  margin-top: 25px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--bright-blue);
+}
+
+@media (max-width: 375px) {
+  body {
+    background-image: url("./images/pattern-background-mobile.svg");
+  }
+
+  .card {
+    padding-bottom: 2rem;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover::after {
+    left: -350px;
+  }
+
+  .text-wrapper h1 {
+    font-size: 22px;
+  }
+
+  .text-wrapper p {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  .plan-wrapper,
+  .footer-button {
+    padding: 15px;
+    margin-inline: 0px;
+  }
+  .plan {
+    line-height: normal;
+  }
+  .plan span:first-of-type {
+    font-size: 14px;
+  }
+  .plan span:last-child {
+    font-size: 14px;
+    text-align: center;
+  }
+  .change-plan {
+    font-size: 12px;
+  }
+}
