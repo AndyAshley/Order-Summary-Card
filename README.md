@@ -32,7 +32,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub Repo](https://github.com/AndyAshley/Order-Summary-Card)
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
+- Live Site URL: [GitHub Pages](https://andyashley.github.io/Order-Summary-Card/)
 
 ## My process
 
